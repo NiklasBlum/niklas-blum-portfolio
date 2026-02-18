@@ -24,10 +24,10 @@ export default function Impressum() {
           <p className="text-gray-300 leading-relaxed">
             E-Mail:{" "}
             <a
-              href="mailto:info@niklas-blum.de"
+              href="mailto:niklas.blum97@gmail.com"
               className="underline hover:text-white"
             >
-              info@niklas-blum.de
+              niklas.blum97@gmail.com
             </a>
           </p>
         </section>

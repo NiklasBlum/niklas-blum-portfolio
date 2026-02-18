@@ -6,6 +6,26 @@ import CheckIcon from "../components/CheckIcon";
 import SectionHeader from "../components/SectionHeader";
 
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const projectImages = [
+    "/projects/Landing.webp",
+    "/projects/Home.webp",
+    "/projects/Trending.webp",
+    "/projects/Detail.webp",
+    "/projects/Watched.webp",
+  ];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % projectImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex(
+      (prev) => (prev - 1 + projectImages.length) % projectImages.length,
+    );
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,17 +51,18 @@ export default function Home() {
     <main>
       {/* Home/Hero Section */}
       <section id="intro" className="bg-slate-800">
-        <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen px-6 gap-5 md:gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-center min-h-[75vh] px-6 gap-5 md:gap-12">
           {/* Left Side - Profile Image, Name and Title */}
           <div className="flex flex-col items-center text-center">
             {/* Profile Image */}
             <div className="relative mb-8">
               <Image
-                src="/Headshot.png"
+                src="/Headshot.webp"
                 alt="Niklas Blum"
                 width={256}
                 height={256}
                 className="relative w-64 h-64 rounded-full object-cover border-4 border-gray-700 shadow-2xl"
+                priority
               />
             </div>
 
@@ -52,21 +73,21 @@ export default function Home() {
 
             {/* Title with accent */}
             <div className="mb-6">
-              <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-2">
-                Full-Stack Web Entwickler
+              <p className="text-2xl lg:text-3xl text-gray-300 mb-2">
+                Frontend-Webentwickler
               </p>
               <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
             </div>
           </div>
 
           {/* Right Side - Description, Tags, Stats, Buttons */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl lg:max-w-3xl">
             {/* Description */}
-            <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-8 italic">
+            <p className="text-xl md:text-2xl lg:text-3xl text-gray-400 leading-relaxed mb-8 italic">
               Sie haben eine Idee oder ein bestehendes Web-Projekt, das
               professionell umgesetzt werden soll? Ich unterstütze Sie als
-              Full-Stack-Webentwickler bei der Entwicklung moderner,
-              skalierbarer Webanwendungen.
+              Frontend-Webentwickler bei der Entwicklung moderner, skalierbarer
+              Webanwendungen.
             </p>
           </div>
         </div>
@@ -87,16 +108,22 @@ export default function Home() {
                 Wer bin ich
               </h3>
               <p className="text-lg text-gray-400 leading-relaxed mb-6">
-                Ich unterstütze bei der Entwicklung moderner, performanter
-                Webanwendungen. Als Full-Stack-Webentwickler mit mehreren Jahren
-                Erfahrung setze ich digitale Projekte strukturiert, zuverlässig
-                und zukunftssicher um – von der ersten Idee bis zum Live-Gang.
-                Gleichzeitig lege ich großen Wert auf Benutzerfreundlichkeit,
-                Barrierefreiheit (a11y) und Suchmaschinenoptimierung (SEO),
-                damit Anwendungen nicht nur technisch überzeugen, sondern auch
-                messbaren Mehrwert liefern. <br />
+                Schon früh hat mich begeistert, wie aus einer Idee durch
+                sauberen Code ein funktionierendes Produkt entsteht. Heute
+                unterstütze ich Kunden dabei, moderne und performante
+                Webanwendungen zu entwickeln, die nicht nur technisch
+                überzeugen, sondern echten Mehrwert schaffen. Als
+                Full-Stack-Webentwickler mit mehreren Jahren Berufserfahrung
+                setze ich digitale Projekte strukturiert, zuverlässig und
+                zukunftssicher um – von der ersten Idee bis zum Live-Gang. Dabei
+                denke ich ganzheitlich: Architektur, Performance,
+                Benutzerfreundlichkeit, Barrierefreiheit (a11y) und
+                Suchmaschinenoptimierung (SEO) gehören für mich
+                selbstverständlich dazu.
+                <br />
                 Sauberer, wartbarer Code und bewährte Best Practices sind für
-                mich selbstverständlich. <br />
+                mich kein Extra, sondern Grundlage jeder nachhaltigen Lösung.{" "}
+                <br />
               </p>
             </div>
 
@@ -104,26 +131,105 @@ export default function Home() {
             {/* Meine Skills */}
             <div className="bg-gray-800 rounded-lg p-6">
               <h3 className="text-3xl font-bold text-white mb-6">
-                Meine Skills
+                Meine Skills / Tech-Stack
               </h3>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "Next.js",
-                  "React",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "C#",
-                  "Node.js",
-                  "REST API's",
-                  "PostgreSQL",
-                ].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-3">
+                    Core Stack (mein Fokus)
+                  </h4>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      "Next.js (Pages Router & App Router)",
+                      "React",
+                      "TypeScript",
+                      "Node.js",
+                      "PostgreSQL",
+                    ].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-3">
+                    Frontend Engineering
+                  </h4>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      "Tailwind CSS",
+                      "Responsive Design",
+                      "Barrierefreiheit (a11y)",
+                      "SEO-Optimierung",
+                      "State Management (Zustand, Context API)",
+                    ].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-3">
+                    Architektur & Qualität
+                  </h4>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      "Clean Code Prinzipien",
+                      "REST APIs",
+                      "CI/CD",
+                      "Git & GitHub",
+                    ].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-3">
+                    AI & Automatisierung
+                  </h4>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      "AI-gestützte Workflows",
+                      "Github Copilot",
+                      "Claude Code",
+                    ].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-3">
+                    ➕ Weitere Erfahrung
+                  </h4>
+                  <div className="flex flex-wrap gap-3">
+                    {["C#"].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -134,37 +240,67 @@ export default function Home() {
               <h3 className="text-3xl font-bold text-white mb-6">
                 Was ich mache
               </h3>
-              <ul className="space-y-3 text-gray-400">
+              <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckIcon />
                   <div className="ml-3">
-                    <strong>Entwicklung moderner Webanwendungen</strong>
+                    <strong className="text-gray-200">
+                      Entwicklung moderner Webanwendungen
+                    </strong>
                     <br />
-                    Maßgeschneiderte Lösungen mit aktuellen Web-Technologien
+                    <span className="text-gray-400">
+                      Maßgeschneiderte Lösungen mit aktuellen Web-Technologien
+                    </span>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckIcon />
                   <div className="ml-3">
-                    <strong>Performance-Optimierung</strong>
+                    <strong className="text-gray-200">
+                      Performance-Optimierung
+                    </strong>
                     <br />
-                    Schnelle Ladezeiten und saubere technische Umsetzung
+                    <span className="text-gray-400">
+                      Schnelle Ladezeiten und saubere technische Umsetzung
+                    </span>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckIcon />
                   <div className="ml-3">
-                    <strong>Responsives Design</strong>
+                    <strong className="text-gray-200">
+                      Responsives Design
+                    </strong>
                     <br />
-                    Optimale Darstellung auf Desktop, Tablet und Smartphone
+                    <span className="text-gray-400">
+                      Optimale Darstellung auf Desktop, Tablet und Smartphone
+                    </span>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckIcon />
                   <div className="ml-3">
-                    <strong>API-Entwicklung & Backend-Anbindung</strong>
+                    <strong className="text-gray-200">
+                      API-Entwicklung & Backend-Anbindung
+                    </strong>
                     <br />
-                    Stabile Schnittstellen für Daten, Services und Integrationen
+                    <span className="text-gray-400">
+                      Stabile Schnittstellen für Daten, Services und
+                      Integrationen
+                    </span>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckIcon />
+                  <div className="ml-3">
+                    <strong className="text-gray-200">
+                      Technische Beratung
+                    </strong>
+                    <br />
+                    <span className="text-gray-400">
+                      Professionelle Beratung zu Technologie-Entscheidungen und
+                      Architektur-Konzepten
+                    </span>
                   </div>
                 </li>
               </ul>
@@ -175,41 +311,58 @@ export default function Home() {
               <h3 className="text-3xl font-bold text-white mb-6">
                 Warum mit mir arbeiten
               </h3>
-              <ul className="space-y-3 text-gray-300">
+              <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckIcon />
                   <div className="ml-3">
-                    <strong>Direkter Ansprechpartner</strong>
+                    <strong className="text-gray-200">
+                      Direkter Ansprechpartner
+                    </strong>
                     <br />
-                    Keine Umwege über Projektmanager – Sie sprechen direkt mit
-                    dem Entwickler.
+                    <span className="text-gray-400">
+                      Keine Umwege über Projektmanager – Sie sprechen direkt mit
+                      dem Entwickler.
+                    </span>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckIcon />
                   <div className="ml-3">
-                    <strong>Strukturiertes & transparentes Vorgehen</strong>
+                    <strong className="text-gray-200">
+                      Strukturiertes & transparentes Vorgehen
+                    </strong>
                     <br />
-                    Klare Absprachen, realistische Einschätzungen und
-                    nachvollziehbare Umsetzung.
+                    <span className="text-gray-400">
+                      Klare Absprachen, realistische Einschätzungen und
+                      nachvollziehbare Umsetzung.
+                    </span>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckIcon />
                   <div className="ml-3">
-                    <strong>Qualität & Nachhaltigkeit</strong>
+                    <strong className="text-gray-200">
+                      Qualität & Nachhaltigkeit
+                    </strong>
                     <br />
-                    Sauberer, wartbarer Code statt schneller Lösungen, die
-                    später Probleme machen.
+                    <span className="text-gray-400">
+                      Sauberer, wartbarer Code statt schneller Lösungen, die
+                      später Probleme machen.
+                    </span>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckIcon />
                   <div className="ml-3">
-                    <strong>Fokus auf Ihr Ziel</strong>
+                    <strong className="text-gray-200">
+                      Fokus auf Ihr Ziel
+                    </strong>
                     <br />
-                    Technik dient dem Zweck – Performance, Nutzerfreundlichkeit
-                    und Skalierbarkeit stehen im Mittelpunkt.
+                    <span className="text-gray-400">
+                      Technik dient dem Zweck – Performance,
+                      Nutzerfreundlichkeit und Skalierbarkeit stehen im
+                      Mittelpunkt.
+                    </span>
                   </div>
                 </li>
               </ul>
@@ -224,54 +377,132 @@ export default function Home() {
           <div className="text-center mb-16">
             <SectionHeader title="Meine Projekte" accentColor="orange" />
             <p className="text-xl text-gray-400 mx-auto">
-              Hier sind einige meiner besten Arbeiten. Jedes Projekt stellt eine
-              einzigartige Herausforderung dar.
+              Hier ist eines meiner Projekte, das meine Fähigkeiten und
+              Herangehensweise zeigt.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project Cards */}
-            {[1, 2, 3].map((project) => (
-              <article
-                key={project}
-                className="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+          {/* Project Card with Image Slider */}
+          <article className="bg-gray-900 rounded-xl shadow-2xl overflow-hidden max-w-4xl mx-auto">
+            {/* Image Slider */}
+            <div className="relative aspect-video bg-gray-950 overflow-hidden">
+              <Image
+                src={projectImages[currentImageIndex]}
+                alt={`Project screenshot ${currentImageIndex + 1}`}
+                fill
+                className="object-cover"
+                priority
+              />
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 cursor-pointer -translate-y-1/2 bg-orange-600/90 hover:bg-orange-500/90 text-white p-2 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Previous image"
               >
-                <div className="h-48 bg-linear-to-r from-orange-500 to-orange-600 flex items-center justify-center">
-                  <div className="text-white text-6xl font-bold opacity-20">
-                    {project}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    Projekt {project}
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    Eine moderne Webanwendung entwickelt mit React und Next.js.
-                    Features include responsive design, API integration, und
-                    optimierte Performance.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {["React", "Next.js", "TypeScript"].map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex space-x-4">
-                    <button className="text-blue-400 hover:text-blue-300 font-medium">
-                      Live Demo
-                    </button>
-                    <button className="text-gray-400 hover:text-gray-200 font-medium">
-                      Code
-                    </button>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 cursor-pointer -translate-y-1/2 bg-orange-600/90 hover:bg-orange-500/90 text-white p-2 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Next image"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+
+              {/* Image Indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {projectImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`h-2  cursor-pointer rounded-full transition-all duration-300 ${
+                      index === currentImageIndex
+                        ? "w-8 bg-orange-500"
+                        : "w-2 bg-orange-300/50 hover:bg-orange-400/70"
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Project Info */}
+            <div className="p-8">
+              <h3 className="text-3xl font-bold text-white mb-4">
+                Movie & TV Show Tracker
+              </h3>
+              <p className="text-gray-400 mb-6 text-lg leading-relaxed">
+                Eine moderne Webanwendung zum Verwalten und Tracken von
+                gesehenen Filmen und Serien. Mit umfangreichen Such- und
+                Filterfunktionen, personalisierten Watchlists, detaillierten
+                Statistiken und Übersicht über kommende Veröffentlichungen.
+                Inklusive Login (Google & Email), Datenbank Integration, API
+                Integration
+              </p>
+
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {[
+                  "Next.js",
+                  "React",
+                  "TypeScript",
+                  "Tailwind CSS",
+                  "REST API",
+                  "Supabase",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 bg-orange-900 text-orange-200 rounded-full text-sm font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Links */}
+              <div className="flex space-x-4">
+                <a
+                  href="https://trackmymedia.vercel.app"
+                  className="px-6 py-2 bg-orange-600 hover:bg-orange-800 text-white font-medium rounded-lg transition-colors duration-200"
+                  target="_blank"
+                >
+                  Zur Anwendung
+                </a>
+                <a
+                  href="#"
+                  className="px-6 py-2 bg-amber-700 hover:bg-amber-500 text-black font-medium rounded-lg transition-colors duration-200"
+                >
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -383,7 +614,7 @@ export default function Home() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-700 text-white transition-all duration-200 resize-none"
+                      className="w-full pl-4 pr-10 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-700 text-white transition-all duration-200 resize-none"
                       placeholder="Erzählen Sie mir von Ihrem Projekt oder sagen Sie einfach Hallo..."
                       required
                     />
@@ -430,9 +661,7 @@ export default function Home() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700">
-                <h3 className="text-2xl font-bold text-white mb-6">
-                  Lassen Sie uns verbinden
-                </h3>
+                <h3 className="text-2xl font-bold text-white mb-6">Kanäle</h3>
 
                 <div className="space-y-6">
                   <a

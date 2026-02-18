@@ -36,7 +36,7 @@ function NavButton({ sectionId, children }: NavButtonProps) {
 export default function Navbar() {
   return (
     <nav className="bg-gray-900 text-white py-4 px-6 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="md:px-4 mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">
           <NavButton sectionId="intro">NB</NavButton>
         </div>
