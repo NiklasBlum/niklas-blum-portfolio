@@ -12,7 +12,7 @@ export default function Section({
   className = "",
 }: SectionProps) {
   const defaultStyles =
-    "py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 transition-colors duration-300";
+    "py-12 min-h-[50px] sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 transition-colors duration-300";
   return (
     <section id={name} className={`${defaultStyles} ${className}`}>
       {children}

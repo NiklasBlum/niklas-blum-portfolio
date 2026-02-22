@@ -16,7 +16,7 @@ export default function ProjectsSection() {
       className="min-h-screen bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-800"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-6 sm:mb-8">
           <SectionHeader
             title="Meine Projekte"
             accentColor="orange"

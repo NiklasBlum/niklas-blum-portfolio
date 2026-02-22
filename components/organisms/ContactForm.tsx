@@ -1,16 +1,17 @@
 import React from "react";
 import { TextInput, Textarea, Button, Heading } from "../atoms";
 
-interface ContactFormProps {
-  onSubmit: (data: { name: string; email: string; message: string }) => void;
-}
-
-export default function ContactForm({ onSubmit }: ContactFormProps) {
+export default function ContactForm() {
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -19,12 +20,47 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // Clear status when user starts typing
+    setSubmitStatus(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formData);
-    setFormData({ name: "", email: "", message: "" });
+    setIsLoading(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send email");
+      }
+
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Nachricht erfolgreich gesendet! Ich melde mich bald bei Ihnen.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Failed to send message. Please try again.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -34,6 +70,18 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
       </Heading>
 
       <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+        {submitStatus && (
+          <div
+            className={`p-4 rounded-lg ${
+              submitStatus.type === "success"
+                ? "bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200 border border-green-200 dark:border-green-800"
+                : "bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800"
+            }`}
+          >
+            {submitStatus.message}
+          </div>
+        )}
+
         <TextInput
           label="Vollständiger Name"
           type="text"
@@ -43,6 +91,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
           placeholder="Ihr vollständiger Name"
           iconType="user"
           required
+          disabled={isLoading}
         />
 
         <TextInput
@@ -54,6 +103,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
           placeholder="ihre.email@beispiel.com"
           iconType="mail"
           required
+          disabled={isLoading}
         />
 
         <Textarea
@@ -64,10 +114,11 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
           rows={6}
           placeholder="Erzählen Sie mir von Ihrem Projekt oder sagen Sie einfach Hallo..."
           required
+          disabled={isLoading}
         />
 
-        <Button type="submit" fullWidth>
-          Nachricht Senden
+        <Button type="submit" fullWidth disabled={isLoading}>
+          {isLoading ? "Wird gesendet..." : "Nachricht Senden"}
         </Button>
       </form>
     </div>

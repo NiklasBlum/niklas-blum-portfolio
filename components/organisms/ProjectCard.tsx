@@ -93,7 +93,7 @@ export default function ProjectCard({
         >
           {title}
         </Heading>
-        <Text className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
+        <Text className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6">
           {description}
         </Text>
 

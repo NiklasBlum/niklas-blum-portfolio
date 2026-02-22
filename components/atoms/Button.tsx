@@ -16,11 +16,11 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
+    "font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed";
+  const cursorClass = props.disabled ? "" : "cursor-pointer";
 
   const variants = {
-    primary:
-      "bg-linear-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl transform hover:scale-[1.02]",
+    primary: "bg-linear-to-r from-blue-600 to-purple-600 text-white",
     secondary: "bg-orange-600 hover:bg-orange-700 text-white",
     tertiary: "bg-amber-700 hover:bg-amber-600 text-black",
   };
@@ -35,7 +35,7 @@ export default function Button({
 
   return (
     <button
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${widthClass} ${className}`}
+      className={`${baseStyles} ${cursorClass} ${variants[variant]} ${sizes[size]} ${widthClass} ${className}`}
       {...props}
     >
       {children}

@@ -17,7 +17,7 @@ export default function CheckListItem({
           {title}
         </strong>
         <br />
-        <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <span className="text-sm sm:text-base text-gray-700 dark:text-gray-400">
           {description}
         </span>
       </div>

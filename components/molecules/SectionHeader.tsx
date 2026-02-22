@@ -1,16 +1,10 @@
-import React from "react";
 import Heading from "../atoms/Heading";
-import SvgIcon from "../atoms/SvgIcon";
-
-interface GradientAccentBarProps {
-  color?: "blue" | "orange" | "green" | "purple";
-}
 
 const colorMap = {
-  blue: "bg-linear-to-r from-blue-500 to-purple-600",
-  orange: "bg-linear-to-r from-orange-500 to-orange-600",
-  green: "bg-linear-to-r from-green-500 to-green-600",
-  purple: "bg-linear-to-r from-purple-500 to-purple-600",
+  blue: "bg-linear-to-r from-blue-400 to-purple-800",
+  orange: "bg-linear-to-r from-orange-400 to-orange-800",
+  green: "bg-linear-to-r from-green-400 to-green-800",
+  purple: "bg-linear-to-r from-purple-400 to-purple-800",
 };
 
 interface SectionHeaderProps {
@@ -28,15 +22,17 @@ export default function SectionHeader({
     <div className="text-center">
       <Heading
         level={2}
-        className="bg-linear-to-r from-gray-900 via-gray-600 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent mb-4 sm:mb-6"
+        className="dark:text-white text-gray-800 min-h-11 md:min-h-15 lg:min-h-17"
       >
         {title}
       </Heading>
+
       <div
-        className={`${colorMap[accentColor]} w-16 sm:w-20 md:w-24 h-1 mx-auto rounded-full mb-4 sm:mb-6 md:mb-8`}
-      ></div>
+        className={`${colorMap[accentColor]} w-24 sm:w-28 md:w-32 h-1 mx-auto rounded-full mb-4 sm:mb-6 md:mb-8`}
+      />
+
       {subtitle && (
-        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mx-auto max-w-2xl px-4 sm:px-6">
+        <p className="text-base sm:text-lg text-gray-700 dark:text-gray-400 mx-auto max-w-2xl px-4 sm:px-6">
           {subtitle}
         </p>
       )}

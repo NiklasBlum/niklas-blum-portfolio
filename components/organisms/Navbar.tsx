@@ -54,9 +54,9 @@ export default function Navbar() {
               <NavButton sectionId="contact">Kontakt</NavButton>
             </li>
           </ul>
-          {/* <div className="pl-2 sm:pl-4 md:pl-6 border-l border-gray-200 dark:border-gray-700">
+          <div className="pl-2 sm:pl-4 md:pl-6 border-l border-gray-200 dark:border-gray-700">
             <ThemeToggle />
-          </div> */}
+          </div>
         </div>
       </div>
     </nav>

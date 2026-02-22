@@ -10,28 +10,28 @@ export default function Footer() {
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
           <a
             href="https://github.com/NiklasBlum"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+            className="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
           >
             GitHub
           </a>
-          <span className="text-gray-300 dark:text-gray-600">•</span>
+          <span className="text-gray-400 dark:text-gray-600">•</span>
           <a
             href="https://linkedin.com"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+            className="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
           >
             LinkedIn
           </a>
-          <span className="text-gray-300 dark:text-gray-600">•</span>
+          <span className="text-gray-400 dark:text-gray-600">•</span>
           <a
             href="/impressum"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+            className="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
           >
             Impressum
           </a>
-          <span className="text-gray-300 dark:text-gray-600">•</span>
+          <span className="text-gray-400 dark:text-gray-600">•</span>
           <a
             href="/datenschutz"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+            className="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
           >
             Datenschutz
           </a>

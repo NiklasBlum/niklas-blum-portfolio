@@ -12,7 +12,7 @@ export default function AboutSection() {
       className="min-h-screen bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="mb-12 sm:mb-16">
+        <div className="mb-6 sm:mb-8">
           <SectionHeader title="Über Mich" accentColor="green" />
         </div>
 

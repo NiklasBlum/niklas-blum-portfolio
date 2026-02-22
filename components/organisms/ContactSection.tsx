@@ -5,15 +5,6 @@ import Section from "./Section";
 import { CONTACT_LINKS } from "@/constants";
 
 export default function ContactSection() {
-  const handleFormSubmit = (data: {
-    name: string;
-    email: string;
-    message: string;
-  }) => {
-    console.log("Form submitted:", data);
-    // Handle form submission here
-  };
-
   return (
     <Section
       name="contact"
@@ -21,7 +12,7 @@ export default function ContactSection() {
     >
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="mb-12 sm:mb-16">
+        <div className="mb-6 sm:mb-8">
           <SectionHeader
             title="Kontakt"
             accentColor="purple"
@@ -30,7 +21,7 @@ export default function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
-          <ContactForm onSubmit={handleFormSubmit} />
+          <ContactForm />
           <div className="space-y-6 sm:space-y-8">
             <ContactLinks links={CONTACT_LINKS} />
           </div>

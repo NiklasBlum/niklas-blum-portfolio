@@ -12,9 +12,9 @@ export default function Text({
   className = "",
 }: TextProps) {
   const variantStyles = {
-    body: "text-base sm:text-lg text-gray-600 dark:text-gray-300",
-    caption: "text-sm sm:text-base text-gray-600 dark:text-gray-400",
-    subtitle: "text-lg sm:text-xl text-gray-600 dark:text-gray-300 italic",
+    body: "text-base sm:text-lg text-gray-700 dark:text-gray-300",
+    caption: "text-sm sm:text-base text-gray-700 dark:text-gray-400",
+    subtitle: "text-lg sm:text-xl text-gray-700 dark:text-gray-300 italic",
   };
 
   return (

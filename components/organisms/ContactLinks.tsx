@@ -39,12 +39,12 @@ export default function ContactLinks({ links }: ContactLinksProps) {
               />
             </div>
             <div>
-              <Heading level={4} className=" dark:text-white">
+              <Heading level={5} className="dark:text-white text-gray-900">
                 {link.name}
               </Heading>
               <Text
                 variant="caption"
-                className="text-gray-600 dark:text-gray-400"
+                className="text-gray-700 dark:text-gray-400"
               >
                 {link.description}
               </Text>

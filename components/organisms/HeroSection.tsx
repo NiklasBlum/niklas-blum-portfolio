@@ -27,14 +27,14 @@ export default function HeroSection() {
           {/* Name with gradient text */}
           <Heading
             level={1}
-            className="bg-linear-to-r from-white via-gray-200 to-white bg-clip-text text-transparent mb-3 sm:mb-4"
+            className=" text-gray-900 dark:text-white mb-3 sm:mb-4"
           >
             {HERO.name}
           </Heading>
 
           {/* Title with accent */}
           <div className="mb-4 sm:mb-6">
-            <p className="text-lg sm:text-xl text-gray-300 mb-2">
+            <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-400 mb-2">
               {HERO.title}
             </p>
             <div className="w-16 sm:w-20 md:w-24 h-1 bg-linear-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
