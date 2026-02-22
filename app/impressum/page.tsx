@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/constants/contact";
 import Link from "next/link";
 
 export default function Impressum() {
@@ -18,10 +19,10 @@ export default function Impressum() {
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             E-Mail:{" "}
             <a
-              href="mailto:niklas.blum97@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="underline hover:text-gray-900 dark:hover:text-white"
             >
-              niklas.blum97@gmail.com
+              {CONTACT_EMAIL}
             </a>
           </p>
         </section>
@@ -35,10 +36,10 @@ export default function Impressum() {
             <br />
             E-Mail:{" "}
             <a
-              href="mailto:niklas.blum97@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="underline hover:text-gray-900 dark:hover:text-white"
             >
-              niklas.blum97@gmail.com
+              {CONTACT_EMAIL}
             </a>
           </p>
         </section>

@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/constants";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
@@ -21,7 +22,7 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
-        to: "niklas.blum97@gmail.com",
+        to: CONTACT_EMAIL,
         reply_to: email,
         subject: `Neue Nachricht über Niklas Blum Portfolio von ${name}`,
         html: `

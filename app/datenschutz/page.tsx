@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/constants";
 import Link from "next/link";
 
 export default function Datenschutz() {
@@ -31,10 +32,10 @@ export default function Datenschutz() {
             <br />
             E-Mail:{" "}
             <a
-              href="mailto:niklas.blum97@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="underline hover:text-gray-900 dark:hover:text-white"
             >
-              niklas.blum97@gmail.com
+              {CONTACT_EMAIL}
             </a>
           </p>
         </section>
