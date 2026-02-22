@@ -1,0 +1,9 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as AboutSection } from "./AboutSection";
+export { default as ProjectsSection } from "./ProjectsSection";
+export { default as ProjectCard } from "./ProjectCard";
+export { default as ContactSection } from "./ContactSection";
+export { default as ContactForm } from "./ContactForm";
+export { default as ContactLinks } from "./ContactLinks";
+export { default as SkillsGrid } from "./SkillsGrid";
+export { default as ServiceList } from "./ServiceList";
