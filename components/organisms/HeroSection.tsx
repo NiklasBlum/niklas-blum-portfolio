@@ -19,7 +19,7 @@ export default function HeroSection() {
               alt={HERO.name}
               width={256}
               height={256}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               priority
             />
           </div>
