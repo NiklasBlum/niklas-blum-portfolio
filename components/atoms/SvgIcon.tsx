@@ -84,16 +84,17 @@ export default function SvgIcon({
       />
     ),
     sun: (
-      <g
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="5" />
-        <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m3.08 3.08l4.24 4.24M1 12h6m6 0h6m-15.78 7.78l4.24-4.24m3.08-3.08l4.24-4.24" />
-      </g>
+      <>
+        <circle cx="12" cy="12" r="5" fill="currentColor" />
+        <rect x="11" y="1" width="2" height="4" fill="currentColor" />
+        <rect x="11" y="19" width="2" height="4" fill="currentColor" />
+        <rect x="1" y="11" width="4" height="2" fill="currentColor" />
+        <rect x="19" y="11" width="4" height="2" fill="currentColor" />
+        <rect x="4" y="4" width="2.83" height="2.83" fill="currentColor" transform="rotate(45 5.41 5.41)" />
+        <rect x="17.18" y="17.18" width="2.83" height="2.83" fill="currentColor" transform="rotate(45 18.59 18.59)" />
+        <rect x="17.18" y="4" width="2.83" height="2.83" fill="currentColor" transform="rotate(45 18.59 5.41)" />
+        <rect x="4" y="17.18" width="2.83" height="2.83" fill="currentColor" transform="rotate(45 5.41 18.59)" />
+      </>
     ),
     moon: (
       <path
