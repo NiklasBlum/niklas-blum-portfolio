@@ -43,13 +43,21 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-6">
-          <ul className="flex space-x-2 sm:space-x-4 md:space-x-6 text-sm sm:text-base text-gray-900 dark:text-white">
+          <ul className="flex items-center text-sm sm:text-base text-gray-900 dark:text-white">
             <li>
               <NavButton sectionId="about">Über mich</NavButton>
             </li>
+            <li
+              className="mx-2 sm:mx-4 md:mx-6 h-4 sm:h-5 w-px bg-gray-300 dark:bg-gray-600"
+              aria-hidden="true"
+            />
             <li>
               <NavButton sectionId="projects">Projekte</NavButton>
             </li>
+            <li
+              className="mx-2 sm:mx-4 md:mx-6 h-4 sm:h-5 w-px bg-gray-300 dark:bg-gray-600"
+              aria-hidden="true"
+            />
             <li>
               <NavButton sectionId="contact">Kontakt</NavButton>
             </li>

@@ -16,7 +16,7 @@ export default function Footer() {
           </a>
           <span className="text-gray-400 dark:text-gray-600">•</span>
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/niklas-blum"
             className="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
           >
             LinkedIn

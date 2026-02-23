@@ -21,7 +21,7 @@ export const PROJECTS = [
       "Supabase",
     ],
     liveUrl: "https://trackmymedia.vercel.app",
-    codeUrl: "#",
+    codeUrl: "https://github.com/NiklasBlum/trackmymedia-next-supabase",
     imageCount: PROJECT_IMAGES.length,
   },
 ];

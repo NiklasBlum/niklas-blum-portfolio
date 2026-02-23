@@ -108,15 +108,17 @@ export default function ProjectCard({
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+            className="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 transition-all duration-200"
           >
             Zur Anwendung
           </a>
           <a
             href={codeUrl}
-            className="px-6 py-2 bg-amber-700 hover:bg-amber-600 text-black font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 transition-all duration-200"
           >
-            Code
+            Zum Github Repo
           </a>
         </div>
       </div>
