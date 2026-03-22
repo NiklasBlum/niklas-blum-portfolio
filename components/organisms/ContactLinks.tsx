@@ -35,7 +35,7 @@ export default function ContactLinks({ links }: ContactLinksProps) {
                 alt={link.name}
                 width={32}
                 height={32}
-                className="h-6 w-6 sm:h-8 sm:w-8"
+                className="h-6 w-6 sm:h-8 sm:w-8 dark:invert invert-0"
               />
             </div>
             <div>

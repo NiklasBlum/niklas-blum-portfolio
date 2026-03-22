@@ -1,9 +1,20 @@
+import Image from "next/image";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 py-6 sm:py-8 px-4 sm:px-6 md:px-8 border-t border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto text-center">
+        <div className="mb-4 sm:mb-4 flex justify-center">
+          <Image
+            src="/logo.png"
+            alt="Niklas Blum"
+            width={40}
+            height={40}
+            className="lg:h-15 lg:w-15 h-10 w-10"
+          />
+        </div>
         <p className="text-xs sm:text-sm mb-4 sm:mb-6">
           &copy; {currentYear} Niklas Blum. All rights reserved.
         </p>

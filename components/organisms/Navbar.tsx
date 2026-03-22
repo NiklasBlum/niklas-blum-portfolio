@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "../molecules/ThemeToggle";
@@ -39,7 +40,16 @@ export default function Navbar() {
     <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 sm:py-4 px-4 sm:px-6 md:px-8 shadow-sm dark:shadow-lg sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
-          <NavButton sectionId="intro">NB</NavButton>
+          <NavButton sectionId="intro">
+            <Image
+              src="/logo.png"
+              alt="Niklas Blum"
+              width={60}
+              height={60}
+              className="lg:h-15 lg:w-15 h-10 w-10"
+              priority
+            />
+          </NavButton>
         </div>
 
         <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-6">
