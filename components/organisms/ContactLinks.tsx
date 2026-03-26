@@ -32,7 +32,7 @@ export default function ContactLinks({ links }: ContactLinksProps) {
             <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 flex items-center justify-center p-2">
               <Image
                 src={link.imageUrl}
-                alt={link.name}
+                alt={`${link.name} Logo - ${link.description}`}
                 width={32}
                 height={32}
                 className="h-6 w-6 sm:h-8 sm:w-8 dark:invert invert-0"

@@ -24,7 +24,7 @@ function ProjectSlider({
     <div className="relative aspect-video bg-gray-100 dark:bg-gray-950 overflow-hidden rounded-t-xl border-b border-gray-200 dark:border-gray-700">
       <Image
         src={images[currentIndex]}
-        alt={`Project screenshot ${currentIndex + 1}`}
+        alt={`Screenshot ${currentIndex + 1} von ${images.length} - Movie & TV Show Tracker Webanwendung`}
         fill
         className="object-cover"
         priority

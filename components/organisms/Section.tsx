@@ -11,10 +11,11 @@ export default function Section({
   children,
   className = "",
 }: SectionProps) {
-  const defaultStyles =
-    "py-12 min-h-[50px] sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 transition-colors duration-300";
   return (
-    <section id={name} className={`${defaultStyles} ${className}`}>
+    <section
+      id={name}
+      className={`py-12 min-h-12.5 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 transition-colors duration-300 scroll-mt-10 md:scroll-mt-15 lg:scroll-mt-18 ${className}`}
+    >
       {children}
     </section>
   );

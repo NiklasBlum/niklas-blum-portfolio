@@ -16,7 +16,7 @@ export default function HeroSection() {
           <div className="relative mb-6 sm:mb-8 w-48 sm:w-56 md:w-64 aspect-square rounded-full border-[3px] border-gray-600 shadow-lg overflow-hidden">
             <Image
               src={HERO.imageSrc}
-              alt={HERO.name}
+              alt="Niklas Blum - Frontend Webentwickler, Porträtfoto"
               width={256}
               height={256}
               className="w-full h-full object-contain"
@@ -43,7 +43,9 @@ export default function HeroSection() {
 
         {/* Right Side - Description */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl">
-          <Text variant="subtitle">{ABOUT_TEXT.heroDescription}</Text>
+          <Text variant="subtitle" className="lg:text-2xl leading-11!">
+            {ABOUT_TEXT.heroDescription}
+          </Text>
         </div>
       </div>
     </Section>
