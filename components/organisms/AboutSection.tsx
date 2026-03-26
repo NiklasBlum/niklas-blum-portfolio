@@ -19,7 +19,7 @@ export default function AboutSection() {
         {/* Grid for About and Skills */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8">
           {/* About */}
-          <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md p-4 sm:p-6">
+          <div className="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md p-4 sm:p-6">
             <Heading
               level={3}
               className="text-gray-900 dark:text-white mb-4 sm:mb-6"
@@ -32,7 +32,7 @@ export default function AboutSection() {
           </div>
 
           {/* Skills */}
-          <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md p-4 sm:p-6">
+          <div className="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md p-4 sm:p-6">
             <Heading
               level={3}
               className="text-gray-900 dark:text-white mb-4 sm:mb-6"
@@ -46,7 +46,7 @@ export default function AboutSection() {
         {/* Grid for Services and Benefits */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8">
           {/* Services */}
-          <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md p-4 sm:p-6">
+          <div className="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md p-4 sm:p-6">
             <Heading
               level={3}
               className="text-gray-900 dark:text-white mb-4 sm:mb-6"
@@ -57,7 +57,7 @@ export default function AboutSection() {
           </div>
 
           {/* Benefits */}
-          <div className="bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md p-4 sm:p-6">
+          <div className="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-gray-700 shadow-md p-4 sm:p-6">
             <Heading
               level={3}
               className="text-gray-900 dark:text-white mb-4 sm:mb-6"

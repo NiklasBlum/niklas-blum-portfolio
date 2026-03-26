@@ -21,7 +21,7 @@ function ProjectSlider({
   onSelectImage,
 }: ProjectSliderProps) {
   return (
-    <div className="relative aspect-video bg-gray-100 dark:bg-gray-950 overflow-hidden rounded-t-xl border-b border-gray-200 dark:border-gray-700">
+    <div className="relative aspect-video bg-gray-100 dark:bg-slate-950 overflow-hidden rounded-t-xl border-b border-gray-200 dark:border-gray-700">
       <Image
         src={images[currentIndex]}
         alt={`Screenshot ${currentIndex + 1} von ${images.length} - Movie & TV Show Tracker Webanwendung`}

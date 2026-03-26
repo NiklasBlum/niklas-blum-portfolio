@@ -15,7 +15,7 @@ interface ContactLinksProps {
 
 export default function ContactLinks({ links }: ContactLinksProps) {
   return (
-    <div className="bg-white dark:bg-gray-950 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6 md:p-8">
+    <div className="bg-white dark:bg-slate-950 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6 md:p-8">
       <Heading level={3} className="text-gray-900 dark:text-white mb-4 sm:mb-6">
         Kanäle
       </Heading>
