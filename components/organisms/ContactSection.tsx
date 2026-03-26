@@ -8,7 +8,7 @@ export default function ContactSection() {
   return (
     <Section
       name="contact"
-      className="min-h-screen bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
+      className="min-h-screen bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-gray-800"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}

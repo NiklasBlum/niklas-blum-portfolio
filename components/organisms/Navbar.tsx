@@ -21,7 +21,6 @@ function NavButton({ sectionId, children }: NavButtonProps) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-    // If not on home, let Link handle navigation to /#sectionId
   };
 
   return (
@@ -37,7 +36,7 @@ function NavButton({ sectionId, children }: NavButtonProps) {
 
 export default function Navbar() {
   return (
-    <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 sm:py-4 px-4 sm:px-6 md:px-8 shadow-sm dark:shadow-lg sticky top-0 z-50 transition-colors duration-300">
+    <nav className="bg-slate-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 py-3 sm:py-4 lg:py-2 px-4 sm:px-6 md:px-8 shadow-sm dark:shadow-lg sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
           <NavButton sectionId="intro">
@@ -55,7 +54,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-6">
           <ul className="flex items-center text-sm sm:text-base text-gray-900 dark:text-white">
             <li>
-              <NavButton sectionId="about">Über mich</NavButton>
+              <NavButton sectionId="about">Über Mich</NavButton>
             </li>
             <li
               className="mx-2 sm:mx-4 md:mx-6 h-4 sm:h-5 w-px bg-gray-300 dark:bg-gray-600"

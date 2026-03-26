@@ -13,7 +13,7 @@ export default function ProjectsSection() {
   return (
     <Section
       name="projects"
-      className="min-h-screen bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-800"
+      className="min-h-screen bg-white dark:bg-slate-950 border-b border-gray-200 dark:border-gray-800"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-6 sm:mb-8">
