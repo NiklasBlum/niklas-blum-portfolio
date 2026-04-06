@@ -11,6 +11,7 @@ interface ProjectSliderProps {
   onNext: () => void;
   onPrev: () => void;
   onSelectImage: (index: number) => void;
+  imageFit?: "cover" | "contain";
 }
 
 function ProjectSlider({
@@ -19,6 +20,7 @@ function ProjectSlider({
   onNext,
   onPrev,
   onSelectImage,
+  imageFit = "cover",
 }: ProjectSliderProps) {
   return (
     <div className="relative aspect-video bg-gray-100 dark:bg-slate-950 overflow-hidden rounded-t-xl border-b border-gray-200 dark:border-gray-700">
@@ -26,7 +28,7 @@ function ProjectSlider({
         src={images[currentIndex]}
         alt={`Screenshot ${currentIndex + 1} von ${images.length} - Movie & TV Show Tracker Webanwendung`}
         fill
-        className="object-cover"
+        className={imageFit === "contain" ? "object-contain" : "object-cover"}
         priority
       />
 
@@ -61,6 +63,7 @@ interface ProjectCardProps {
   onSelectImage: (index: number) => void;
   liveUrl: string;
   codeUrl: string;
+  imageFit?: "cover" | "contain";
 }
 
 export default function ProjectCard({
@@ -74,6 +77,7 @@ export default function ProjectCard({
   onSelectImage,
   liveUrl,
   codeUrl,
+  imageFit,
 }: ProjectCardProps) {
   return (
     <article className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden max-w-4xl mx-auto">
@@ -83,6 +87,7 @@ export default function ProjectCard({
         onNext={onNextImage}
         onPrev={onPrevImage}
         onSelectImage={onSelectImage}
+        imageFit={imageFit}
       />
 
       {/* Project Info */}

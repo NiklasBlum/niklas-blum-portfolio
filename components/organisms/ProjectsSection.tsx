@@ -1,15 +1,37 @@
 import React from "react";
 import { useCarousel } from "@/hooks";
-import { PROJECT_IMAGES, PROJECTS } from "@/constants";
+import { PROJECTS } from "@/constants";
 import SectionHeader from "../molecules/SectionHeader";
 import Section from "./Section";
 import ProjectCard from "./ProjectCard";
 
-export default function ProjectsSection() {
+interface ProjectCardWrapperProps {
+  project: (typeof PROJECTS)[number];
+}
+
+function ProjectCardWrapper({ project }: ProjectCardWrapperProps) {
   const { currentIndex, nextSlide, prevSlide, goToSlide } = useCarousel(
-    PROJECT_IMAGES.length,
+    project.images.length,
   );
 
+  return (
+    <ProjectCard
+      title={project.title}
+      description={project.description}
+      techStack={project.techStack}
+      images={project.images}
+      currentImageIndex={currentIndex}
+      onNextImage={nextSlide}
+      onPrevImage={prevSlide}
+      onSelectImage={goToSlide}
+      liveUrl={project.liveUrl}
+      codeUrl={project.codeUrl}
+      imageFit={project.imageFit}
+    />
+  );
+}
+
+export default function ProjectsSection() {
   return (
     <Section
       name="projects"
@@ -24,21 +46,11 @@ export default function ProjectsSection() {
           />
         </div>
 
-        {PROJECTS.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            techStack={project.techStack}
-            images={PROJECT_IMAGES}
-            currentImageIndex={currentIndex}
-            onNextImage={nextSlide}
-            onPrevImage={prevSlide}
-            onSelectImage={goToSlide}
-            liveUrl={project.liveUrl}
-            codeUrl={project.codeUrl}
-          />
-        ))}
+        <div className="flex flex-col gap-12">
+          {PROJECTS.map((project) => (
+            <ProjectCardWrapper key={project.id} project={project} />
+          ))}
+        </div>
       </div>
     </Section>
   );
