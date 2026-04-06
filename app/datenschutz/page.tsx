@@ -29,6 +29,10 @@ export default function Datenschutz() {
             <br />
             Niklas Blum
             <br />
+            Uhlandstr. 2
+            <br />
+            88319 Aitrach
+            <br />
             <br />
             E-Mail:{" "}
             <a
@@ -71,7 +75,16 @@ export default function Datenschutz() {
             <li>Datenübertragbarkeit zu verlangen (Art. 20 DSGVO)</li>
             <li>
               Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen (Art.
-              77 DSGVO)
+              77 DSGVO) — zuständig ist der{" "}
+              <a
+                href="https://www.baden-wuerttemberg.datenschutz.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-gray-900 dark:hover:text-white"
+              >
+                Landesbeauftragte für den Datenschutz und die
+                Informationsfreiheit Baden-Württemberg
+              </a>
             </li>
           </ul>
         </section>
@@ -94,18 +107,43 @@ export default function Datenschutz() {
           </ul>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
             Diese Daten werden nicht mit anderen Datenquellen zusammengeführt
-            und werden nach spätestens 7 Tagen gelöscht.
+            und werden nach spätestens 7 Tagen gelöscht. Rechtsgrundlage ist
+            Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren
+            und stabilen Betrieb der Website).
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">6. Kontaktformular</h2>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Falls vorhanden, werden bei der Nutzung des Kontaktformulars Ihre
-            Angaben für die Beantwortung Ihrer Anfrage verarbeitet. Eine
-            Weitergabe Ihrer Daten an Dritte findet nicht statt. Die Daten
-            werden gelöscht, sobald sie für die Erreichung des Zweckes, für den
-            sie erhoben wurden, nicht mehr erforderlich sind.
+            Beim Absenden des Kontaktformulars werden folgende Daten erhoben:
+            Name, E-Mail-Adresse und Nachrichtentext. Diese Daten werden
+            ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
+            Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche
+            Maßnahmen bzw. Vertragserfüllung) sowie Art. 6 Abs. 1 lit. f DSGVO
+            (berechtigtes Interesse an der Beantwortung von Anfragen).
+          </p>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
+            Für den Versand der E-Mail nutze ich den Dienst{" "}
+            <strong>Resend</strong> (Resend Inc., 2261 Market Street #5039, San
+            Francisco, CA 94114, USA). Dabei werden die übermittelten Daten an
+            Server in den USA übertragen. Die Übertragung erfolgt auf Grundlage
+            von Standarddatenschutzklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO.
+            Weitere Informationen finden Sie in der Datenschutzerklärung von
+            Resend unter{" "}
+            <a
+              href="https://resend.com/legal/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-900 dark:hover:text-white"
+            >
+              resend.com/legal/privacy-policy
+            </a>
+            .
+          </p>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
+            Die Daten werden gelöscht, sobald sie für die Erreichung des
+            Zweckes, für den sie erhoben wurden, nicht mehr erforderlich sind.
           </p>
         </section>
 
@@ -120,11 +158,11 @@ export default function Datenschutz() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">8. Externe Links</h2>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Diese Website enthält möglicherweise Links zu externen Websites. Wir
-            haben keinen Einfluss auf den Inhalt dieser Websites und können
-            daher keine Verantwortung für diese übernehmen. Der jeweilige
-            Anbieter oder Betreiber ist allein verantwortlich für die Inhalte
-            der verlinkten Seiten.
+            Diese Website enthält möglicherweise Links zu externen Websites. Ich
+            habe keinen Einfluss auf den Inhalt dieser Websites und kann daher
+            keine Verantwortung für diese übernehmen. Der jeweilige Anbieter
+            oder Betreiber ist allein verantwortlich für die Inhalte der
+            verlinkten Seiten.
           </p>
         </section>
 
@@ -133,7 +171,7 @@ export default function Datenschutz() {
             9. Änderungen dieser Datenschutzerklärung
           </h2>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit
+            Ich behalte mir vor, diese Datenschutzerklärung anzupassen, damit
             sie stets den aktuellen rechtlichen Anforderungen entspricht. Bei
             einer erneuten Nutzung gilt dann die neue Datenschutzerklärung.
           </p>

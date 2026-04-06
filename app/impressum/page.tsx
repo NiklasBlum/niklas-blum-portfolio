@@ -11,29 +11,16 @@ export default function Impressum() {
           <h2 className="text-2xl font-semibold mb-4">Angaben gemäß § 5 TMG</h2>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             Niklas Blum
+            <br />
+            Uhlandstr. 2
+            <br />
+            88319 Aitrach
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Kontakt</h2>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            E-Mail:{" "}
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="underline hover:text-gray-900 dark:hover:text-white"
-            >
-              {CONTACT_EMAIL}
-            </a>
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">
-            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Niklas Blum
-            <br />
             E-Mail:{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
@@ -86,7 +73,7 @@ export default function Impressum() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4">Datenschutz</h2>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Informationen zum Datenschutz finden Sie in unserer{" "}
+            Informationen zum Datenschutz finden Sie in meiner{" "}
             <Link
               href="/datenschutz"
               className="underline hover:text-gray-900 dark:hover:text-white"
