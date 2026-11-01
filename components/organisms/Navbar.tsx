@@ -53,6 +53,18 @@ export default function Navbar() {
 
         <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-6">
           <ul className="flex items-center text-sm sm:text-base text-gray-900 dark:text-white">
+            <li className="hidden lg:list-item">
+              <Link
+                href="/leistungen"
+                className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+              >
+                Leistungen
+              </Link>
+            </li>
+            <li
+              className="hidden lg:block mx-2 sm:mx-4 md:mx-6 h-4 sm:h-5 w-px bg-gray-300 dark:bg-gray-600"
+              aria-hidden="true"
+            />
             <li>
               <NavButton sectionId="about">Über Mich</NavButton>
             </li>

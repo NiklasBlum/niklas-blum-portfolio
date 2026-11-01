@@ -4,11 +4,40 @@ import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import Navbar from "../components/organisms/Navbar";
 import Footer from "../components/organisms/Footer";
+import { absoluteUrl, SITE_URL } from "@/constants/site";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Niklas Blum",
+  metadataBase: SITE_URL,
+  title: {
+    default: "Niklas Blum – Freelance Webentwickler für React & Next.js",
+    template: "%s | Niklas Blum",
+  },
   description:
-    "Persönliches Portfolio von Niklas Blum, Frontend-Webentwickler.",
+    "Freelance Webentwickler für Vereine, Unternehmen und Einzelpersonen. Moderne Websites und Webanwendungen mit React, Next.js und TypeScript – direkt, persönlich und zuverlässig.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: absoluteUrl("/"),
+    siteName: "Niklas Blum",
+    title: "Niklas Blum – Freelance Webentwickler für React & Next.js",
+    description:
+      "Websites und Webanwendungen für Vereine, Unternehmen und Einzelpersonen.",
+    images: [{ url: "/Headshot.webp", alt: "Niklas Blum, Webentwickler" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Niklas Blum – Freelance Webentwickler für React & Next.js",
+    description:
+      "Websites und Webanwendungen für Vereine, Unternehmen und Einzelpersonen.",
+    images: ["/Headshot.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -39,6 +68,31 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
           {children}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: "Niklas Blum",
+                url: absoluteUrl("/"),
+                image: absoluteUrl("/Headshot.webp"),
+                jobTitle: "Freelance Webentwickler",
+                email: "mailto:niklas.blum97@gmail.com",
+                knowsAbout: [
+                  "React",
+                  "Next.js",
+                  "TypeScript",
+                  "Webentwicklung",
+                  "Sanity CMS",
+                ],
+                sameAs: [
+                  "https://www.linkedin.com/in/niklas-blum/",
+                  "https://github.com/NiklasBlum",
+                ],
+              }),
+            }}
+          />
           <Analytics />
           <Footer />
         </ThemeProvider>

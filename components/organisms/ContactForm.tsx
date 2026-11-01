@@ -1,14 +1,16 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { TextInput, Textarea, Button, Heading } from "../atoms";
 
 export default function ContactForm() {
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [submitStatus, setSubmitStatus] = React.useState<{
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
     type: "success" | "error";
     message: string;
   } | null>(null);
@@ -24,7 +26,7 @@ export default function ContactForm() {
     setSubmitStatus(null);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setSubmitStatus(null);

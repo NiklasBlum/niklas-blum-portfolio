@@ -72,12 +72,12 @@ export const BENEFITS = [
 
 export const ABOUT_TEXT = {
   whoAmI: `Schon früh hat mich begeistert, wie aus einer Idee durch sauberen Code ein funktionierendes Produkt entsteht. Heute unterstütze ich Kunden dabei, moderne und performante Webanwendungen zu entwickeln, die nicht nur technisch überzeugen, sondern echten Mehrwert schaffen. Als Frontend-Webentwickler mit mehreren Jahren Berufserfahrung setze ich digitale Projekte strukturiert, zuverlässig und zukunftssicher um – von der ersten Idee bis zum Live-Gang. Dabei denke ich ganzheitlich: Architektur, Performance, Benutzerfreundlichkeit, Barrierefreiheit (a11y) und Suchmaschinenoptimierung (SEO) gehören für mich selbstverständlich dazu. Sauberer, wartbarer Code und bewährte Best Practices sind für mich kein Extra, sondern Grundlage jeder nachhaltigen Lösung.`,
-  heroDescription: `Sie haben eine Idee oder ein bestehendes Web-Projekt, das professionell umgesetzt werden soll? Ich unterstütze Sie als Frontend-Webentwickler bei der Entwicklung moderner, skalierbarer Webanwendungen.`,
+  heroDescription: `Ich entwickle moderne Websites und Webanwendungen für Vereine, Unternehmen und Einzelpersonen – mit React, Next.js und TypeScript. Von der ersten Idee bis zum Launch begleite ich Ihr Projekt persönlich und transparent.`,
 };
 
 export const HERO = {
   name: "Niklas Blum",
-  title: "Frontend-Webentwickler",
+  title: "Freelance Webentwickler für React & Next.js",
   imageSrc: "/Headshot.webp",
 };
 

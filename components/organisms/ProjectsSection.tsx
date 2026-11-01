@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useCarousel } from "@/hooks";
 import { PROJECTS } from "@/constants";
@@ -17,6 +19,7 @@ function ProjectCardWrapper({ project }: ProjectCardWrapperProps) {
   return (
     <ProjectCard
       title={project.title}
+      label={project.label}
       description={project.description}
       techStack={project.techStack}
       images={project.images}
@@ -25,6 +28,7 @@ function ProjectCardWrapper({ project }: ProjectCardWrapperProps) {
       onPrevImage={prevSlide}
       onSelectImage={goToSlide}
       liveUrl={project.liveUrl}
+      detailsUrl={project.detailsUrl}
       codeUrl={project.codeUrl}
       imageFit={project.imageFit}
     />
@@ -42,7 +46,7 @@ export default function ProjectsSection() {
           <SectionHeader
             title="Meine Projekte"
             accentColor="orange"
-            subtitle="Hier ist eines meiner Projekte, das meine Fähigkeiten und Herangehensweise zeigt."
+            subtitle="Ausgewählte Kunden- und Eigenprojekte, die meine Arbeit und Herangehensweise zeigen."
           />
         </div>
 
